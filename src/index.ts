@@ -1,5 +1,6 @@
 import config from 'config';
 import connectDb from './utils/connectDb';
+import logger from './utils/logger';
 import createServer from './server';
 
 const port = config.get<number>('port');
@@ -10,7 +11,7 @@ app.use('/', (req, res) => {
 });
 
 app.listen(port, async () => {
-  console.log(`Server started on port ${port}`);
+  logger.info(`Server started on port ${port}`);
 
   await connectDb();
 });
