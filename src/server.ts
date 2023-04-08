@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import config from 'config';
 import routes from './routes/routes';
+import errorHandlerMiddleware from './middlewares/errorHandler';
 
 function createServer() {
   const app = express();
@@ -12,6 +13,7 @@ function createServer() {
   }
 
   app.use(express.json());
+  app.use(errorHandlerMiddleware);
 
   routes(app);
 
