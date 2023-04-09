@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema(
     city: { type: String, trim: true },
     postalCode: { type: String, trim: true },
     country: { type: String, trim: true },
-    role: { type: String, trim: true },
+    role: { type: String, enum: ['user', 'admin'], default: 'user' },
   },
   {
     timestamps: true,

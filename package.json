@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.ts",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "data:import": "nodemon seeder.ts",
+    "data:destroy": "nodemon seeder.ts -d"
   },
   "keywords": [
     "node",
