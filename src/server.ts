@@ -15,9 +15,10 @@ function createServer() {
 
   app.use(cors());
   app.use(express.json());
-  app.use(errorHandlerMiddleware);
 
   routes(app);
+
+  app.use(errorHandlerMiddleware);
 
   return app;
 }

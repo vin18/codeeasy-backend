@@ -1,3 +1,4 @@
+import 'express-async-errors';
 import { Express } from 'express';
 import validate from '../middlewares/validateResource';
 import { userSchema } from '../schema/user.schema';
