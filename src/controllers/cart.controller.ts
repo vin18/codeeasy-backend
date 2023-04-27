@@ -1,11 +1,7 @@
 import { Request, Response } from 'express';
 import Cart from '../models/cart.model';
-import { UserDocument } from '../models/user.model';
 import { StatusCodes } from '../utils/statusCodes';
-
-interface ExpressRequestInterface extends Request {
-  user?: UserDocument;
-}
+import { ExpressRequestInterface } from '../middlewares/authorization';
 
 /**
  * @desc    Get cart items for a specific user
