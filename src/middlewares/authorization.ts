@@ -25,8 +25,8 @@ const protect = async (
       );
     }
 
-    const jstSecret = config.get<string>('jwtSecret');
-    const decoded = jwt.verify(token, jstSecret) as { userId: string };
+    const jwtSecret = config.get<string>('jwtSecret');
+    const decoded = jwt.verify(token, jwtSecret) as { userId: string };
 
     const user = await User.findById(decoded.userId);
     if (!user) {
